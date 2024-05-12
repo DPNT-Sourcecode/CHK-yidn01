@@ -53,6 +53,11 @@ describe('CHK challenge: supermarket checkout', function() {
 		assert.equal(checkout('FFFFFF'), 40)
 	})
 
+	it('should give the right price for Ks', function() {
+		assert.equal(checkout('K'), 70)
+		assert.equal(checkout('KK'), 120)
+	})
+
 	it('should give the right price for Qs and Rs', function() {
 		assert.equal(checkout('QQ'), 60)
 		assert.equal(checkout('QQQ'), 80)
@@ -66,6 +71,11 @@ describe('CHK challenge: supermarket checkout', function() {
 		assert.equal(checkout('UUUU'), 120)
 		assert.equal(checkout('UUUUU'), 160)
 		assert.equal(checkout('UUUUUUUU'), 240)
+	})
+
+	it('should give the right price for special offers', function() {
+		assert.equal(checkout('STYX'), 45 + 17)
+		assert.equal(checkout('ATXZ'), 45 + 50)
 	})
 
     it('should return -1 for invalid input', function() {
