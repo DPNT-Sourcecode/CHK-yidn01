@@ -86,4 +86,3 @@ describe('CHK challenge: supermarket checkout', function() {
 	    assert.equal(checkout('ABCA#'), -1);
 	});
 });
-
