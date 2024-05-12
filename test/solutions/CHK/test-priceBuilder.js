@@ -5,36 +5,9 @@ var assert = require('assert');
 const PriceBuilder = require('../../../lib/solutions/CHK/priceBuilder');
 
 describe('CHK challenge: PriceBuilder class', function() {
-	it('does not throw when initialized with valid input', function() {
-	    assert.doesNotThrow(() => new Basket('AAB'));
+	it('builds basic price list', function() {
+	    const builder = new PriceBuilder({ A: 15, B: 30 })
+        builder.addStandardOffer({ items: 'AA', price: 20 })
+        assert.equal(builder.buildPricingStrategy().length, 3)
 	});
-
-    it('is not empty when initialized with items', function() {
-        const basket = new Basket('AAB')
-        assert.equal(basket.isEmpty(), false)
-    })
-
-    it('correctly handles valid remove request', function() {
-        const basket = new Basket('AABC')
-        basket.remove('AB')
-        assert.equal(basket.getCount('A'), 1)
-        assert.equal(basket.getCount('B'), 0)
-        assert.equal(basket.getCount('C'), 1)
-    })
-
-    it('can be fully emptied', function() {
-        const basket = new Basket('AABC')
-        basket.remove('AB')
-        basket.remove('A')
-        basket.remove('C')
-        assert(basket.isEmpty())
-    })
-
-    it('correctly identifies subsets', function() {
-        const basket = new Basket('AABC')
-        assert(basket.contains('AB'))
-        assert(basket.contains('AA'))
-        assert(!basket.contains('AAA'))
-        assert(!basket.contains('ABF'))
-    })
 });
