@@ -13,5 +13,19 @@ describe('CHK challenge: basket class', function() {
         const basket = new Basket('AAB')
         assert.equal(basket.isEmpty(), false)
     })
+
+    it('correctly handles valid remove request', function() {
+        const basket = new Basket('AABC')
+        basket.removeItems('AB')
+        assert.equal(basket.getItemTypes(), 'AC')
+    })
+
+    it('can be fully emptied', function() {
+        const basket = new Basket('AABC')
+        basket.removeItems('AB')
+        basket.removeItems('A')
+        basket.removeItems('C')
+        assert.equal(basket.isEmpty(), true)
+    })
 });
 
