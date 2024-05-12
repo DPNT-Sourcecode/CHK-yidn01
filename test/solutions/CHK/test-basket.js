@@ -2,7 +2,7 @@ var mocha = require('mocha')
 var describe = mocha.describe
 var it = mocha.it
 var assert = require('assert');
-const checkout = require('../../../lib/solutions/CHK/checkout');
+const Basket = require('../../../lib/solutions/CHK/basket');
 
 describe('CHK challenge: basket class', function() {
 	it('should return the price for one A', function() {
