@@ -5,7 +5,7 @@ var assert = require('assert');
 const checkout = require('../../../lib/solutions/CHK/checkout');
 
 describe('CHK challenge: supermarket checkout', function() {
-	it('should return the price for an empty cart', function() {
+	it('should return the price for no items', function() {
 	    assert.equal(checkout(''), 0);
 	});
 
@@ -26,10 +26,10 @@ describe('CHK challenge: supermarket checkout', function() {
 	});
 
     it('should return -1 for invalid input', function() {
-	    assert.equal(checkout('E'), -1);
+	    assert.equal(checkout('#'), -1);
 	});
 
     it('should return -1 for invalid input at the end of the string', function() {
-	    assert.equal(checkout('ABCAE'), -1);
+	    assert.equal(checkout('ABCA#'), -1);
 	});
 });
