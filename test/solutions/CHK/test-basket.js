@@ -5,7 +5,7 @@ var assert = require('assert');
 const Basket = require('../../../lib/solutions/CHK/basket');
 
 describe('CHK challenge: basket class', function() {
-	it('should be initializable with valid input', function() {
+	it('does not throw when initialized with valid input', function() {
 	    assert.doesNotThrow(() => new Basket('AAB'));
 	});
 
@@ -14,3 +14,4 @@ describe('CHK challenge: basket class', function() {
         assert.equal(basket.isEmpty(), false)
     })
 });
+
