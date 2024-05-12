@@ -11,7 +11,7 @@ describe('CHK challenge: PriceBuilder class', function() {
         assert.equal(builder.buildPricingStrategy().length, 3)
 	});
 
-    it('', function() {
+    it('calculates discounts correctly', function() {
 	    const builder = new PriceBuilder({ A: 15, B: 30 })
         assert.equal(builder.calculateDiscount({ items: 'AA', price: 20 }), 10)
     });
