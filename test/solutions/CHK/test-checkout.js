@@ -17,7 +17,15 @@ describe('CHK challenge: supermarket checkout', function() {
 	    assert.equal(checkout('AAA'), 130);
 	});
 
+    it('should return the discounted price for four As and misc others', function() {
+	    assert.equal(checkout('ABAACA'), 230);
+	});
+
     it('should return -1 for invalid input', function() {
 	    assert.equal(checkout('E'), -1);
+	});
+
+    it('should return -1 for invalid input at the end of the string', function() {
+	    assert.equal(checkout('ABCAE'), -1);
 	});
 });
