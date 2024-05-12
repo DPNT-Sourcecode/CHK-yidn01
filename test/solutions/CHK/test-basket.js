@@ -27,6 +27,14 @@ describe('CHK challenge: basket class', function() {
         basket.remove('AB')
         basket.remove('A')
         basket.remove('C')
-        assert.equal(basket.isEmpty(), true)
+        assert(basket.isEmpty())
+    })
+
+    it('correctly identifies subsets', function() {
+        const basket = new Basket('AABC')
+        assert(basket.contains('AB'))
+        assert(basket.contains('AA'))
+        assert(!basket.contains('AAA'))
+        assert(!basket.contains('ABF'))
     })
 });
