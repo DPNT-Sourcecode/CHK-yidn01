@@ -28,4 +28,3 @@ describe('CHK challenge: basket class', function() {
         assert.equal(basket.isEmpty(), true)
     })
 });
-
